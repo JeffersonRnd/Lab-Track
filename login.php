@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post" autocomplete="off">
         <?= csrf_field() ?>
         <label for="codigo">Codigo de estudiante</label>
-        <input type="text" id="codigo" name="codigo" value="<?= e($codigo) ?>" required autofocus>
+        <input type="text" id="codigo" name="codigo" value="<?= e($codigo) ?>" required>
 
         <label for="password">Contrasena</label>
         <input type="password" id="password" name="password" required>
