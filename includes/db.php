@@ -17,7 +17,10 @@ function db(): PDO
                 ]
             );
             // Alinear la zona horaria de MySQL con la de PHP
-            $pdo->exec("SET time_zone = '" . date('P') . "'");
+            $stmt = $pdo->prepare('SET time_zone = ?');
+            $stmt ->execute([date('P')]);
+
+            
         } catch (PDOException $e) {
             http_response_code(500);
             die('<h1>Error de conexion</h1><p>No se pudo conectar a la base de datos. '
